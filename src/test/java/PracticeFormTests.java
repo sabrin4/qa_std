@@ -1,4 +1,3 @@
-import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -55,6 +54,12 @@ public class PracticeFormTests {
         $("#react-select-4-option-1").click();
         $("#submit").click();
 
-
+        $("#output").shouldHave(
+                text("Serega"),
+                text("Testerov"),
+                text("testQA@63rus.com"),
+                text("myAddrress"),
+                text("asd")
+        );
     }
 }
