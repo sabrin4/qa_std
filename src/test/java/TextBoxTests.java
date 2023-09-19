@@ -31,9 +31,5 @@ public class TextBoxTests {
                 text("myAddrress"),
                 text("asd")
         );
-
     }
-
-
-
 }

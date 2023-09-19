@@ -1,0 +1,14 @@
+
+.classname;
+#id1;
+[attribute];
+tag;
+
+closest() - поиск "вверх"
+
+ARRANGE - подготовить
+ACT - действие
+ASSERT - проверка
+
+setTimeout(function () {debugger}, 5000);
+

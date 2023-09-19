@@ -8,31 +8,32 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
-    static File photo = new File("C:\\DARK.jpg");
+    static File photo = new File("D:\\dark.jpeg");
 
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
+        Configuration.holdBrowserOpen = true;
+        Configuration.pageLoadTimeout = 60000;
 
     }
 
     @Test
     void fillPracticeFormTest() {
         open("/automation-practice-form");
-        //firstName, lastName
-        $("#firstName").setValue("Serega");
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        $("[id=firstName]").setValue("Serega");
         $("#lastName").setValue("Testerov");
         $("#userEmail").setValue("serega@testmail.com");
-        //male
         $x("//label[@for='gender-radio-1']").click();
         //userPhoneNumber
         $("#userNumber").setValue("9181104115");
         //date of birth
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
+        //$(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("October");
-        $(".react-datepicker__month-select").click();
+        //$(".react-datepicker__month-select").click();
 
         $(".react-datepicker__year-select").click();
         $(".react-datepicker__year-select").selectOption("2001");

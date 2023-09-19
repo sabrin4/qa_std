@@ -5,9 +5,6 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BestContributorSelenideTest {
-
-
-
     @Test
     void BestContributorSelenide() {
         //открываем страницу, находим нужный элемент
@@ -18,11 +15,6 @@ public class BestContributorSelenideTest {
                 .$$("ul li").first().hover();
         // находим имя во всплывающем окне
         $(".Popover-message").shouldHave(text("Andrei Solntsev"));
-
-
-
-
-
         sleep(5000);
     }
 }
